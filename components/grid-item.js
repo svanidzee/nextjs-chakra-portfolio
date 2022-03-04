@@ -12,12 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
 
-import {
-  IoLogoTwitter,
-  IoLogoInstagram,
-  IoLogoGithub,
-  IoLogoLinkedin,
-} from "react-icons/io5";
+import { IoLogoGithub } from "react-icons/io5";
 
 export const GridItem = ({ children, href, title, thumbnail }) => (
   <Box w="100%" textAlign="center">
