@@ -4,11 +4,11 @@ import Layout from "../components/layouts/article";
 import Section from "../components/section";
 import { WorkGridItem } from "../components/grid-item";
 
-import netflix from "../public/images/works/netflix.png";
-import coffestore from "../public/images/works/store.png";
-import ecommerce from "../public/images/works/ecommerceredux.png";
-import ecomreducer from "../public/images/works/ecommerce.png";
-import portfolio from "../public/images/works/portfolio.png";
+import netflix from "../public/images/works/netflix.PNG";
+import coffestore from "../public/images/works/store.PNG";
+import ecommerce from "../public/images/works/ecommerceredux.PNG";
+import ecomreducer from "../public/images/works/ecommerce.PNG";
+import portfolio from "../public/images/works/portfolio.PNG";
 
 const Works = () => {
   return (
@@ -16,6 +16,7 @@ const Works = () => {
       <Container maxW="3xl">
         <Heading as="h3" fontSize={20} mb={4}>
           Projects
+          {/*  */}
         </Heading>
 
         <SimpleGrid columns={[1, 1, 1]} gap={6}>
