@@ -7,11 +7,11 @@ const Footer = () => {
       <Box align="center" fontSize="sm">
         <Text textAlign="center" fontSize="sm">
           Built with
-          <chakra.span fontWeight="semibold" color="aquamarine">
+          <chakra.span fontWeight="semibold" color="#64ffda">
             Next.js
           </chakra.span>{" "}
           &{" "}
-          <chakra.span fontWeight="semibold" color="aquamarine">
+          <chakra.span fontWeight="semibold" color="#64ffda">
             Chakra UI
           </chakra.span>
         </Text>

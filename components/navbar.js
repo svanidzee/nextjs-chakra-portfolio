@@ -51,7 +51,7 @@ const Navbar = (props) => {
       position="fixed"
       as="nav"
       w="100%"
-      bg={useColorModeValue("#ffffff40", "#20202380")}
+      bg={useColorModeValue("#ffffff40", "#212121")}
       css={{ backdropFilter: "blur(10px)" }}
       zIndex={1}
       {...props}
@@ -96,7 +96,7 @@ const Navbar = (props) => {
                 transition="all 0.2s"
                 borderRadius="md"
                 borderWidth="1px"
-                backgroundColor="#202023"
+                backgroundColor={useColorModeValue("ghostwhite", "#212121")}
               >
                 <NextLink href="/" passHref>
                   <MenuItem as={Link}>Home</MenuItem>

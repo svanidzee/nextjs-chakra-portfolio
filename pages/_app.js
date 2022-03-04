@@ -1,15 +1,31 @@
-import { ChakraProvider } from "@chakra-ui/react";
 import Layout from "../components/layouts/main";
-import theme from "../lib/theme";
+import { AnimatePresence } from "framer-motion";
 
-function MyApp({ Component, pageProps, router }) {
+import Chakra from "../components/chakra";
+
+if (typeof window !== "undefined") {
+  window.history.scrollRestoration = "manual";
+}
+
+function Website({ Component, pageProps, router }) {
   return (
-    <ChakraProvider theme={theme}>
+    <Chakra cookies={pageProps.cookies}>
+      {/* <Fonts /> */}
       <Layout router={router}>
-        <Component {...pageProps} />
+        <AnimatePresence
+          exitBeforeEnter
+          initial={true}
+          onExitComplete={() => {
+            if (typeof window !== "undefined") {
+              window.scrollTo({ top: 0 });
+            }
+          }}
+        >
+          <Component {...pageProps} key={router.route} />
+        </AnimatePresence>
       </Layout>
-    </ChakraProvider>
+    </Chakra>
   );
 }
 
-export default MyApp;
+export default Website;
