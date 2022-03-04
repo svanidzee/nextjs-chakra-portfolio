@@ -9,7 +9,7 @@ export default class Document extends NextDocument {
         <Head>
           <link rel="preload" href="https://fonts.googleapis.com" />
           <link
-            rel="preload"
+            rel="preconnect"
             href="https://fonts.gstatic.com"
             crossOrigin="true"
           />

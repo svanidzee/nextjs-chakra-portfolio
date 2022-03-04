@@ -4,10 +4,10 @@ import Layout from "../components/layouts/article";
 import Section from "../components/section";
 import { WorkGridItem } from "../components/grid-item";
 
-import netflix from "../public/images/works/netflix-clone.png";
-import coffestore from "../public/images/works/coffe-store.png";
-import ecommerce from "../public/images/works/ecommerce-redux.png";
-import ecomreducer from "../public/images/works/ecommerce-useReducer.png";
+import netflix from "../public/images/works/netflix.png";
+import coffestore from "../public/images/works/store.png";
+import ecommerce from "../public/images/works/ecommerceredux.png";
+import ecomreducer from "../public/images/works/ecommerce.png";
 import portfolio from "../public/images/works/portfolio.png";
 
 const Works = () => {

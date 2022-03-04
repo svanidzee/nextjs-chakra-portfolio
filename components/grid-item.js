@@ -50,7 +50,7 @@ export const WorkGridItem = ({ children, id, title, thumbnail, onOpen }) => (
       <Text mt={2} fontSize={20}>
         {title}
       </Text>
-      <NextLink href="/" scroll={false}>
+      <NextLink href="/" scroll={false} passHref>
         <LinkBox
           ml={2}
           mt={3}
