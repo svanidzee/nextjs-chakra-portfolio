@@ -1,5 +1,7 @@
 import NextLink from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+
 import {
   Box,
   Text,
@@ -9,6 +11,12 @@ import {
   WrapItem,
   Badge,
   Flex,
+  Button,
+  Tooltip,
+  Link as ChakraLink,
+  useColorModeValue,
+  useColorMode,
+  Icon,
 } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
 
@@ -25,47 +33,39 @@ export const GridItem = ({ children, href, title, thumbnail }) => (
         loading="lazy"
       />
       <LinkOverlay href={href} target="_blank">
-        <Text mt={2}>{title}</Text>
+        <Text mt={2}>{title}efefsdcsd</Text>
       </LinkOverlay>
-      <Text fontSize={14}>{children}</Text>
+      <Text fontSize={14}>{children}cwcwe</Text>
     </LinkBox>
   </Box>
 );
 
-export const WorkGridItem = ({ children, id, title, thumbnail, onOpen }) => (
+export const WorkGridItem = ({
+  children,
+  id,
+  title,
+  thumbnail,
+  onOpen,
+  red,
+}) => (
   <Box w="100%" textAlign="left" cursor="pointer" onClick={onOpen}>
     <Image
       src={thumbnail}
       alt={title}
       className="grid-item-thumbnail"
-      placeholder="blur"
+      // placeholder="blur"
     />
-    <Flex
-      spacing={1}
-      marginBottom="auto"
-      direction="row"
-      alignItems="center"
-      mb={2}
-    >
+    <Flex spacing={1} direction="row" alignItems="center" mb={2}>
       <Text mt={2} fontSize={20}>
         {title}
       </Text>
-      <NextLink href="/" scroll={false} passHref>
-        <LinkBox
-          ml={2}
-          mt={3}
-          cursor="pointer"
-          variant="ghost"
-          colorScheme="teal"
-          size="sm"
-          href="/"
-          title="See the project on GitHub"
-          isExternal
-          aria-label="See project on GitHub"
-        >
-          <IoLogoGithub />
-        </LinkBox>
-      </NextLink>
+      <Tooltip label="Chakra-UI">
+        <ChakraLink href={red} display="flex" ml={1}>
+          <Icon color="MenuText" fontSize="2xl">
+            <IoLogoGithub />
+          </Icon>
+        </ChakraLink>
+      </Tooltip>
     </Flex>
     <Wrap spacing={1} marginBottom="auto">
       <WrapItem>
