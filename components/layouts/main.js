@@ -10,6 +10,10 @@ const Main = ({ children, router }) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Homepage</title>
+        <meta
+          name="description"
+          content="Irakli Svanidze's - personal portfolio homepage"
+        ></meta>
       </Head>
 
       <NavBar path={router.asPath} />

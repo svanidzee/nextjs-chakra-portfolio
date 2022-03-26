@@ -10,10 +10,12 @@ const SocialIcons = ({ children, href, label }) => {
   return (
     <Tooltip label={label}>
       <chakra.button
-        bg={useColorModeValue(`blackAlpha.100`, `whiteAlpha.100`)}
+        //bg={useColorModeValue(`blackAlpha.100`, `whiteAlpha.100`)}
         rounded="full"
-        w={8}
-        h={8}
+        width="48px"
+        height="48px"
+        // w={8}
+        // h={8}
         cursor="pointer"
         as="a"
         rel="noopener"
@@ -24,7 +26,7 @@ const SocialIcons = ({ children, href, label }) => {
         justifyContent="center"
         transition="background 0.3s ease"
         _hover={{
-          bg: useColorModeValue(`blackAlpha.200`, `whiteAlpha.200`),
+          bg: "transparent",
         }}
       >
         <VisuallyHidden>{label}</VisuallyHidden>
