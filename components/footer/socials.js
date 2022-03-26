@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  chakra,
-  Tooltip,
-  useColorModeValue,
-  VisuallyHidden,
-} from "@chakra-ui/react";
+import { chakra, Tooltip, VisuallyHidden } from "@chakra-ui/react";
 
 const SocialIcons = ({ children, href, label }) => {
   return (

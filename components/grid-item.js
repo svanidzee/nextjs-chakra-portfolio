@@ -23,6 +23,8 @@ export const GridItem = ({ children, href, title, thumbnail }) => (
       <Image
         src={thumbnail}
         alt={title}
+        layout="fill"
+        priority
         className="grid-item-thumbnail"
         placeholder="blur"
         loading="lazy"
@@ -37,7 +39,15 @@ export const GridItem = ({ children, href, title, thumbnail }) => (
 
 export const WorkGridItem = ({ children, title, thumbnail, onOpen, red }) => (
   <Box w="100%" textAlign="left" cursor="pointer" onClick={onOpen}>
-    <Image src={thumbnail} alt={title} className="grid-item-thumbnail" />
+    <Image
+      src={thumbnail}
+      alt={title}
+      className="grid-item-thumbnail"
+      layout="fill"
+      priority
+      placeholder="blur"
+      loading="lazy"
+    />
     <Flex spacing={1} direction="row" alignItems="center" mb={2}>
       <Text mt={2} fontSize={20}>
         {title}
