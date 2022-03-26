@@ -12,7 +12,6 @@ export default class Document extends NextDocument {
             rel="preconnect"
             href="https://fonts.gstatic.com"
             crossOrigin="true"
-            //
           />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
@@ -33,7 +32,6 @@ export default class Document extends NextDocument {
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
-          {/*  */}
         </body>
       </Html>
     );

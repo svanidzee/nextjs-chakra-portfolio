@@ -10,12 +10,9 @@ const SocialIcons = ({ children, href, label }) => {
   return (
     <Tooltip label={label}>
       <chakra.button
-        //bg={useColorModeValue(`blackAlpha.100`, `whiteAlpha.100`)}
         rounded="full"
-        width="48px"
-        height="48px"
-        // w={8}
-        // h={8}
+        w="48px"
+        h="48px"
         cursor="pointer"
         as="a"
         rel="noopener"

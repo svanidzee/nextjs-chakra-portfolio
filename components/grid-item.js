@@ -1,6 +1,4 @@
-import NextLink from "next/link";
 import Image from "next/image";
-import Link from "next/link";
 
 import {
   Box,
@@ -11,11 +9,8 @@ import {
   WrapItem,
   Badge,
   Flex,
-  Button,
   Tooltip,
   Link as ChakraLink,
-  useColorModeValue,
-  useColorMode,
   Icon,
 } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
@@ -40,21 +35,9 @@ export const GridItem = ({ children, href, title, thumbnail }) => (
   </Box>
 );
 
-export const WorkGridItem = ({
-  children,
-  id,
-  title,
-  thumbnail,
-  onOpen,
-  red,
-}) => (
+export const WorkGridItem = ({ children, title, thumbnail, onOpen, red }) => (
   <Box w="100%" textAlign="left" cursor="pointer" onClick={onOpen}>
-    <Image
-      src={thumbnail}
-      alt={title}
-      className="grid-item-thumbnail"
-      // placeholder="blur"
-    />
+    <Image src={thumbnail} alt={title} className="grid-item-thumbnail" />
     <Flex spacing={1} direction="row" alignItems="center" mb={2}>
       <Text mt={2} fontSize={20}>
         {title}
