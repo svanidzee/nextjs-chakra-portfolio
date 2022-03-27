@@ -1,7 +1,5 @@
-import { AnimatePresence, motion } from "framer-motion";
 import { IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react";
 
-import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import useSound from "use-sound";

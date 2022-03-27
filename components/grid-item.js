@@ -17,26 +17,6 @@ import { Global } from "@emotion/react";
 
 import { IoLogoGithub } from "react-icons/io5";
 
-export const GridItem = ({ children, href, title, thumbnail }) => (
-  <Box w="100%" textAlign="center">
-    <LinkBox cursor="pointer">
-      <Image
-        src={thumbnail}
-        alt={title}
-        layout="fill"
-        priority
-        className="grid-item-thumbnail"
-        placeholder="blur"
-        loading="lazy"
-      />
-      <LinkOverlay href={href} target="_blank">
-        <Text mt={2}>{title}efefsdcsd</Text>
-      </LinkOverlay>
-      <Text fontSize={14}>{children}cwcwe</Text>
-    </LinkBox>
-  </Box>
-);
-
 export const WorkGridItem = ({ children, title, thumbnail, onOpen, red }) => (
   <Box w="100%" textAlign="left" cursor="pointer" onClick={onOpen}>
     <Image
