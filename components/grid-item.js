@@ -23,9 +23,6 @@ export const WorkGridItem = ({ children, title, thumbnail, onOpen, red }) => (
       src={thumbnail}
       alt={title}
       className="grid-item-thumbnail"
-      layout="fill"
-      priority
-      placeholder="blur"
       loading="lazy"
     />
     <Flex spacing={1} direction="row" alignItems="center" mb={2}>
@@ -33,7 +30,7 @@ export const WorkGridItem = ({ children, title, thumbnail, onOpen, red }) => (
         {title}
       </Text>
       <Tooltip label="Chakra-UI">
-        <ChakraLink href={red} display="flex" ml={1}>
+        <ChakraLink href={red} display="flex" ml={1} isExternal>
           <Icon color="MenuText" fontSize="2xl">
             <IoLogoGithub />
           </Icon>

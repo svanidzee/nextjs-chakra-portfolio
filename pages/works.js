@@ -5,6 +5,10 @@ import Section from "../components/section";
 import { WorkGridItem } from "../components/grid-item";
 
 import netflix from "../public/images/works/netflix.PNG";
+import rent from "../public/images/works/1.PNG";
+import tesla from "../public/images/works/tesla.PNG";
+import services from "../public/images/works/services.PNG";
+import morty from "../public/images/works/morty.PNG";
 import ecommerce from "../public/images/works/ecommerceredux.PNG";
 import ecomreducer from "../public/images/works/ecommerce.PNG";
 import portfolio from "../public/images/works/portfolio.PNG";
@@ -34,18 +38,49 @@ const Works = () => {
               id="netflix"
               title="Netflix Clone"
               thumbnail={netflix}
-              red="https://github.com/svanidzee"
+              red="https://github.com/svanidzee/netflixclone2"
             >
-              Netflix Clone built with Next.js
+              Netflix Clone built with Next.js and magic Link
+            </WorkGridItem>
+          </Section>
+
+          <Section>
+            <WorkGridItem
+              id="apartments"
+              title="Apartments"
+              thumbnail={rent}
+              red="https://github.com/svanidzee/rent-buy-nextjs"
+            >
+              Apartments for Rent built with Next.js and rapidAPI
+            </WorkGridItem>
+          </Section>
+          <Section>
+            <WorkGridItem
+              id="tesla"
+              title="Tesla Clone"
+              thumbnail={tesla}
+              red="https://github.com/svanidzee/tesla-clone"
+            >
+              Tesla Clone built with React.js and styled-components
+            </WorkGridItem>
+          </Section>
+          <Section>
+            <WorkGridItem
+              id="netflix"
+              title="Netflix Clone"
+              thumbnail={morty}
+              red="https://github.com/svanidzee/first-react-apolloclient"
+            >
+              Rick and morty app built with React.js and GraphQL apollo-client
             </WorkGridItem>
           </Section>
 
           <Section delay={0.1}>
             <WorkGridItem
-              id="fourpainters"
+              id="shopping"
               title="Shopping Cart"
               thumbnail={ecommerce}
-              red="https://youtube.com"
+              red="https://github.com/svanidzee/mini-ecommerce-redux"
             >
               Mini-ecommerc site built with React.js, MUI, react-router,
               redux-toolkit, json-server
@@ -54,13 +89,23 @@ const Works = () => {
 
           <Section delay={0.1}>
             <WorkGridItem
-              id="fourpainters"
+              id="shopping"
               title="Shopping Cart"
               thumbnail={ecomreducer}
-              red="https://twitter.com"
+              red="https://github.com/svanidzee/mini-ecommerce-useReducer"
             >
               Same mini ecommerce app built with React.js, MUI, React
               context-api, useReducer
+            </WorkGridItem>
+          </Section>
+          <Section delay={0.1}>
+            <WorkGridItem
+              id="services"
+              title="Services landing page"
+              thumbnail={services}
+              red="https://github.com/svanidzee/services"
+            >
+              My wirst ever react app ))
             </WorkGridItem>
           </Section>
         </SimpleGrid>
