@@ -16,8 +16,17 @@ import {
 import { Global } from "@emotion/react";
 
 import { IoLogoGithub } from "react-icons/io5";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { IoOpenOutline } from "react-icons/io5";
 
-export const WorkGridItem = ({ children, title, thumbnail, onOpen, red }) => (
+export const WorkGridItem = ({
+  children,
+  title,
+  thumbnail,
+  onOpen,
+  red,
+  external,
+}) => (
   <Box w="100%" textAlign="left" cursor="pointer" onClick={onOpen}>
     <Image
       src={thumbnail}
@@ -29,13 +38,27 @@ export const WorkGridItem = ({ children, title, thumbnail, onOpen, red }) => (
       <Text mt={2} fontSize={20}>
         {title}
       </Text>
-      <Tooltip label="Chakra-UI">
+
+      {title !== "Portfolio" ? (
+        <>
+          <ChakraLink href={red} display="flex" ml={1} isExternal>
+            <Icon color="MenuText" fontSize="2xl">
+              <IoLogoGithub />
+            </Icon>
+          </ChakraLink>
+          <ChakraLink href={external} display="flex" ml={1} isExternal>
+            <Icon color="MenuText" fontSize="2xl">
+              <IoOpenOutline />
+            </Icon>
+          </ChakraLink>
+        </>
+      ) : (
         <ChakraLink href={red} display="flex" ml={1} isExternal>
           <Icon color="MenuText" fontSize="2xl">
             <IoLogoGithub />
           </Icon>
         </ChakraLink>
-      </Tooltip>
+      )}
     </Flex>
     <Wrap spacing={1} marginBottom="auto">
       <WrapItem>

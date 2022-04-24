@@ -5,10 +5,9 @@ import Section from "../components/section";
 import { WorkGridItem } from "../components/grid-item";
 
 import netflix from "../public/images/works/netflix.PNG";
-import rent from "../public/images/works/1.PNG";
+import rent from "../public/images/works/rent.PNG";
 import tesla from "../public/images/works/tesla.PNG";
 import services from "../public/images/works/services.PNG";
-import morty from "../public/images/works/morty.PNG";
 import ecommerce from "../public/images/works/ecommerceredux.PNG";
 import ecomreducer from "../public/images/works/ecommerce.PNG";
 import portfolio from "../public/images/works/portfolio.PNG";
@@ -39,6 +38,7 @@ const Works = () => {
               title="Netflix Clone"
               thumbnail={netflix}
               red="https://github.com/svanidzee/netflixclone2"
+              external="https://netflixclone2-hxgix8z3z-svanidzee.vercel.app"
             >
               Netflix Clone built with Next.js and magic Link
             </WorkGridItem>
@@ -50,6 +50,7 @@ const Works = () => {
               title="Apartments"
               thumbnail={rent}
               red="https://github.com/svanidzee/rent-buy-nextjs"
+              external="https://rent-buy-nextjs-f6debtdzo-svanidzee.vercel.app"
             >
               Apartments for Rent built with Next.js and rapidAPI
             </WorkGridItem>
@@ -60,18 +61,9 @@ const Works = () => {
               title="Tesla Clone"
               thumbnail={tesla}
               red="https://github.com/svanidzee/tesla-clone"
+              external="https://tesla-clone-rf9zi9qjc-svanidzee.vercel.app"
             >
               Tesla Clone built with React.js and styled-components
-            </WorkGridItem>
-          </Section>
-          <Section>
-            <WorkGridItem
-              id="netflix"
-              title="Netflix Clone"
-              thumbnail={morty}
-              red="https://github.com/svanidzee/first-react-apolloclient"
-            >
-              Rick and morty app built with React.js and GraphQL apollo-client
             </WorkGridItem>
           </Section>
 
@@ -81,6 +73,7 @@ const Works = () => {
               title="Shopping Cart"
               thumbnail={ecommerce}
               red="https://github.com/svanidzee/mini-ecommerce-redux"
+              external="https://wakeful-match.surge.sh"
             >
               Mini-ecommerc site built with React.js, MUI, react-router,
               redux-toolkit, json-server
@@ -93,6 +86,7 @@ const Works = () => {
               title="Shopping Cart"
               thumbnail={ecomreducer}
               red="https://github.com/svanidzee/mini-ecommerce-useReducer"
+              external="https://one-curve.surge.sh/"
             >
               Same mini ecommerce app built with React.js, MUI, React
               context-api, useReducer
@@ -104,6 +98,7 @@ const Works = () => {
               title="Services landing page"
               thumbnail={services}
               red="https://github.com/svanidzee/services"
+              external="https://epic-lumiere-ffce04.netlify.app/"
             >
               My wirst ever react app ))
             </WorkGridItem>
