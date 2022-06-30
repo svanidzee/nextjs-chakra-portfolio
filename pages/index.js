@@ -1,12 +1,12 @@
-import { Container, Heading, Box, SimpleGrid, Text } from "@chakra-ui/react";
-import Paragraph from "../components/paragraph";
-import Layout from "../components/layouts/article";
-import Section from "../components/section";
+import { Container, Heading, Box, SimpleGrid, Text } from '@chakra-ui/react';
+import Paragraph from 'components/paragraph';
+import Layout from 'components/layouts/article';
+import Section from 'components/section';
 
 const Home = () => (
   <Layout>
     <Container maxW="3xs4">
-      <Box display={{ md: "flex" }}>
+      <Box display={{ md: 'flex' }}>
         <Box flexGrow={1} textAlign="center">
           <Heading as="h2" variant="page-title">
             Irakli Svanidze
@@ -71,3 +71,4 @@ const Home = () => (
 );
 
 export default Home;
+
