@@ -1,0 +1,16 @@
+{
+    "extends": ["airbnb", "eslint:recommended", "next"],
+    "env": {
+      "node": false,
+      "es6": true,
+      "browser": true
+    },
+    "rules": {
+      "semi": "error",
+      "react/jsx-fragments": ["warn", "element"],
+    //   "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "no-console": "off",
+      "react/jsx-props-no-spreading": 0
+    }
+  }
+  
