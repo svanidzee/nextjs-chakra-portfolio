@@ -1,7 +1,5 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
-const Paragraph = styled.p`
+export const Paragraph = styled.p`
   text-align: justify;
 `;
-
-export default Paragraph;

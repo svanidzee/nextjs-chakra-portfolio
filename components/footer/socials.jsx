@@ -1,7 +1,7 @@
-import React from "react";
-import { chakra, Tooltip, VisuallyHidden } from "@chakra-ui/react";
+import React from 'react';
+import { chakra, Tooltip, VisuallyHidden } from '@chakra-ui/react';
 
-const SocialIcons = ({ children, href, label }) => {
+export function SocialIcons ({ children, href, label }) {
   return (
     <Tooltip label={label}>
       <chakra.button
@@ -12,13 +12,13 @@ const SocialIcons = ({ children, href, label }) => {
         as="a"
         rel="noopener"
         href={href}
-        target={"_blank"}
+        target="_blank"
         display="inline-flex"
         alignItems="center"
         justifyContent="center"
         transition="background 0.3s ease"
         _hover={{
-          bg: "transparent",
+          bg: 'transparent',
         }}
       >
         <VisuallyHidden>{label}</VisuallyHidden>
@@ -26,6 +26,4 @@ const SocialIcons = ({ children, href, label }) => {
       </chakra.button>
     </Tooltip>
   );
-};
-
-export default SocialIcons;
+}

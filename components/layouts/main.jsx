@@ -1,10 +1,10 @@
-import Head from "next/head";
-import { Box, Container } from "@chakra-ui/react";
+import Head from 'next/head';
+import { Box, Container } from '@chakra-ui/react';
 
-import NavBar from "../navbar";
-import Footer from "../footer/footer";
+import { Navbar } from 'components/navbar/navbar';
+import { Footer } from 'components/footer/footer';
 
-const Main = ({ children, router }) => {
+export function Layout ({ children, router }) {
   return (
     <Box as="main" pb={8}>
       <Head>
@@ -13,18 +13,13 @@ const Main = ({ children, router }) => {
         <meta
           name="description"
           content="Irakli Svanidze's - personal portfolio homepage"
-        ></meta>
+        />
       </Head>
-
-      <NavBar path={router.asPath} />
-
+      <Navbar path={router.asPath} />
       <Container maxW="3xl" pt={14}>
         {children}
-
         <Footer />
       </Container>
     </Box>
   );
-};
-
-export default Main;
+}

@@ -1,21 +1,21 @@
-import Layout from "../components/layouts/main";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from 'framer-motion';
 
-import Chakra from "../components/chakra";
+import { Layout } from 'components/layouts/main';
+import { Chakra } from 'components/chakra';
 
-if (typeof window !== "undefined") {
-  window.history.scrollRestoration = "manual";
+if (typeof window !== 'undefined') {
+  window.history.scrollRestoration = 'manual';
 }
 
-function Website({ Component, pageProps, router }) {
+export default function Website ({ Component, pageProps, router }) {
   return (
     <Chakra cookies={pageProps.cookies}>
       <Layout router={router}>
         <AnimatePresence
           exitBeforeEnter
-          initial={true}
+          initial
           onExitComplete={() => {
-            if (typeof window !== "undefined") {
+            if (typeof window !== 'undefined') {
               window.scrollTo({ top: 0 });
             }
           }}
@@ -26,5 +26,3 @@ function Website({ Component, pageProps, router }) {
     </Chakra>
   );
 }
-
-export default Website;
