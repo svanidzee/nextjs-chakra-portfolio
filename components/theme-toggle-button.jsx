@@ -1,3 +1,4 @@
+import React, { useCallback } from 'react';
 import { IconButton, useColorMode, useColorModeValue } from '@chakra-ui/react';
 import { IoPlanetOutline, IoPlanetSharp } from 'react-icons/io5';
 
@@ -11,10 +12,13 @@ export function ThemeToggleButton () {
   const isDarkMode = toggleColorMode === 'dark';
   const [play] = useSound(isDarkMode ? switchOnSound : switchOffSound);
 
-  const handleClick = () => {
-    toggleColorMode();
-    play();
-  };
+  const handleClick = useCallback(
+    () => {
+      toggleColorMode();
+      play();
+    },
+    [play, toggleColorMode],
+  );
 
   return (
     <IconButton

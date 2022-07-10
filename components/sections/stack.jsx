@@ -1,21 +1,33 @@
 import React from 'react';
-import { Heading, WrapItem, SimpleGrid } from '@chakra-ui/react';
-
-import { Section } from 'components/sections/section';
+import {
+  Box,
+  Heading,
+  Text,
+  Wrap,
+  WrapItem,
+} from '@chakra-ui/react';
 
 export function Stack ({ tools = [] }) {
   return (
-    <Section delay={0.3}>
-      <Heading as="h3" variant="section-title" align="left">
-        Technologies I Use
-      </Heading>
-      <SimpleGrid as="ul" columns={5} spacingX="90px" spacingY="2px">
+    <Box as="section" py="vGutter">
+      <Box marginBottom="16">
+        <Heading size="2xl" letterSpacing="tight">
+          Tools &amp; Softwares
+        </Heading>
+        <Text marginTop="5" fontSize="2xl" maxWidth={{ md: '45rem' }}>
+          Over the years, I had the opportunity to work with various software, tools and
+          frameworks. Here are some of them:
+        </Text>
+      </Box>
+
+      <Wrap spacing="6">
         {tools.map((tool) => (
-          <WrapItem as="li" fontFamily="heading" color="sage.base" key={tool} minW={222}>
+          <WrapItem fontSize="larger" color="sage.base" key={tool}>
             {tool}
           </WrapItem>
         ))}
-      </SimpleGrid>
-    </Section>
+      </Wrap>
+    </Box>
+
   );
 }

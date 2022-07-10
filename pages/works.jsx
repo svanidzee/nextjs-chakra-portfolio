@@ -41,5 +41,3 @@ export default function Works ({ projects }) {
     </Layout>
   );
 }
-
-// export { getServerSideProps } from '../components/chakra';

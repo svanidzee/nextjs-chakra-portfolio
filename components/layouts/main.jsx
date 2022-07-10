@@ -16,7 +16,7 @@ export function Layout ({ children, router }) {
         />
       </Head>
       <Navbar path={router.asPath} />
-      <Container maxW="3xl" pt={14}>
+      <Container maxW="container.lg" pt={14}>
         {children}
         <Footer />
       </Container>

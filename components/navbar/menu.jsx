@@ -2,7 +2,6 @@ import React from 'react';
 import NextLink from 'next/link';
 import {
   Box,
-  Link,
   Menu,
   MenuItem,
   MenuList,
@@ -35,11 +34,12 @@ export function MobileMenu ({ handleMenuClick }) {
             backgroundColor={useColorModeValue('ghostwhite', '#212121')}
           >
             <NextLink href="/" passHref prefetch={false}>
-              <MenuItem as={Link}>Home</MenuItem>
+              <MenuItem as="a">Home</MenuItem>
             </NextLink>
             <NextLink href="/works" passHref prefetch={false}>
-              <MenuItem as={Link}>Works</MenuItem>
+              <MenuItem as="a">Works</MenuItem>
             </NextLink>
+
           </MenuList>
         </Menu>
       </Box>

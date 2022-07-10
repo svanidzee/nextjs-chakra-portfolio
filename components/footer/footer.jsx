@@ -11,7 +11,7 @@ export function Footer () {
     twitter,
   } = social;
   return (
-    <Flex direction="column" alignItems="center" justifyContent="center">
+    <Flex as="footer" direction="column" alignItems="center" justifyContent="center">
       <Stack direction="row" spacing={3} mr={{ base: 'auto', md: 2 }}>
         <SocialIcons label="GitHub" href={github}>
           <IoLogoGithub />

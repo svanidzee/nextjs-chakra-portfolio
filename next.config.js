@@ -1,5 +1,10 @@
+/**
+ * @type {import('next').NextConfig}
+ */
+
 module.exports = {
-  webpack: (config, { isServer }) => {
+  swcMinify: true,
+  webpack: (config) => {
     config.module.rules.push({
       test: /\.(mp3)$/,
       use: {

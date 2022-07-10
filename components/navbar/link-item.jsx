@@ -10,6 +10,7 @@ export function LinkItem ({
   return (
     <NextLink href={href} passHref scroll={false} prefetch={false}>
       <Link
+        as="a"
         p={2}
         color={useColorModeValue('gray200', 'whiteAlpha.900')}
         target={target}

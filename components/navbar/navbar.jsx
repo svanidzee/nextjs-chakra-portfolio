@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
+
 import {
   Container,
   Box,
-  useColorModeValue,
 } from '@chakra-ui/react';
 
 import useSound from 'use-sound';
@@ -24,10 +24,10 @@ export function Navbar (props) {
 
   return (
     <Box
+      as="header"
+      aria-label="Main navigation"
       position="fixed"
-      as="nav"
       w="100%"
-      bg={useColorModeValue('#ffffff40', '#212121')}
       css={{ backdropFilter: 'blur(10px)' }}
       zIndex={1}
       {...props}
@@ -40,7 +40,6 @@ export function Navbar (props) {
         align="center"
         justifyContent="flex-start"
       >
-
         <Tabs path={path} />
         <MobileMenu handleMenuClick={handleMenuClick} />
       </Container>

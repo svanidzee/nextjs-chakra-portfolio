@@ -3,7 +3,7 @@ import {
 } from '@chakra-ui/react';
 
 import { Layout } from 'components/layouts/article';
-import { tools } from 'data/social';
+import { tools } from 'data/tools';
 
 import { Author } from 'components/sections/author';
 import { About } from 'components/sections/about';

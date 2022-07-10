@@ -10,7 +10,6 @@ export default class Document extends NextDocument {
     return (
       <Html lang="en">
         <Head>
-          <link rel="preload" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
             href="https://fonts.gstatic.com"
@@ -22,6 +21,8 @@ export default class Document extends NextDocument {
             href="https://fonts.gstatic.com"
             crossOrigin="true"
           />
+          <link rel="preload" href="https://fonts.googleapis.com" as="font" />
+
           <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"

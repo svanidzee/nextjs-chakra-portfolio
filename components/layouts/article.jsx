@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 
-import { GridItemStyle } from '../grid-item';
+import { GridItemStyle } from 'components/gridItem-style';
 
 const variants = {
   hidden: { opacity: 0, x: 0, y: 20 },

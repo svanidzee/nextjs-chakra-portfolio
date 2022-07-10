@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Heading, Box,
+  Heading, Box, Text,
 } from '@chakra-ui/react';
 
 export function Author ({ author = [] }) {
@@ -8,10 +8,10 @@ export function Author ({ author = [] }) {
     <Box display={{ md: 'flex' }}>
       {author.map((item) => (
         <Box flexGrow={1} textAlign="center" key={item.id}>
-          <Heading as="h2" variant="page-title">
+          <Heading as="h2" variant="page-title" size="lg" fontWeight={500}>
             {item.name}
           </Heading>
-          <p>{item.position}</p>
+          <Text>{item.position}</Text>
         </Box>
       ))}
     </Box>

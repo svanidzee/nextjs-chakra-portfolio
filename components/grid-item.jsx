@@ -10,10 +10,8 @@ import {
   Link as ChakraLink,
   Icon,
 } from '@chakra-ui/react';
-import { Global } from '@emotion/react';
 import {
   IoLogoGithub,
-  // IoOpenOutline
 } from 'react-icons/io5';
 
 export function WorkGridItem ({
@@ -31,6 +29,8 @@ export function WorkGridItem ({
         loading="lazy"
         width={720}
         height={340}
+        priority
+        placeholder="blur"
       />
       <Flex spacing={1} direction="row" alignItems="center" mb={2}>
         <Text mt={2} fontSize={20}>
@@ -60,12 +60,17 @@ export function WorkGridItem ({
         )} */}
 
         <ChakraLink
+          as="a"
           href={red}
           display="flex"
           ml={1}
           isExternal
         >
-          <Icon color="MenuText" fontSize="xl" mt={2}>
+          <Icon
+            color="icon.dim"
+            fontSize="xl"
+            mt={2}
+          >
             <IoLogoGithub />
           </Icon>
         </ChakraLink>
@@ -80,17 +85,5 @@ export function WorkGridItem ({
       </Wrap>
       <Text fontSize={14}>{children}</Text>
     </Box>
-  );
-}
-
-export function GridItemStyle () {
-  return (
-    <Global
-      styles={`
-      .grid-item-thumbnail {
-        border-radius: 12px;
-      }
-    `}
-    />
   );
 }
