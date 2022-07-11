@@ -1,4 +1,6 @@
 import { AnimatePresence } from 'framer-motion';
+import { Global } from '@emotion/react';
+import { fontFace } from 'lib/fontface';
 
 import { Layout } from 'components/layouts/main';
 import { Chakra } from 'components/chakra';
@@ -20,6 +22,7 @@ export default function Website ({ Component, pageProps, router }) {
             }
           }}
         >
+          <Global styles={fontFace} />
           <Component {...pageProps} key={router.route} />
         </AnimatePresence>
       </Layout>

@@ -10,6 +10,7 @@ import menuOpenSound from 'public/sounds/menu-open.mp3';
 
 import { Tabs } from 'components/navbar/tabs';
 import { MobileMenu } from 'components/navbar/menu';
+// import { ThemeToggleButton } from 'components/theme-toggle-button';
 
 export function Navbar (props) {
   const { path } = props;
@@ -41,6 +42,8 @@ export function Navbar (props) {
         justifyContent="flex-start"
       >
         <Tabs path={path} />
+        {/* <ThemeToggleButton display={{ base: 'none', md: 'flex' }}/> */}
+
         <MobileMenu handleMenuClick={handleMenuClick} />
       </Container>
     </Box>

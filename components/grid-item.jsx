@@ -29,8 +29,6 @@ export function WorkGridItem ({
         loading="lazy"
         width={720}
         height={340}
-        priority
-        placeholder="blur"
       />
       <Flex spacing={1} direction="row" alignItems="center" mb={2}>
         <Text mt={2} fontSize={20}>
