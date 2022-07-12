@@ -2,8 +2,15 @@ import { AnimatePresence } from 'framer-motion';
 import { Global } from '@emotion/react';
 import { fontFace } from 'lib/fontface';
 
+import {
+  ChakraProvider,
+  // cookieStorageManager,
+  // localStorageManager,
+} from '@chakra-ui/react';
+
+import { theme } from 'lib/theme';
 import { Layout } from 'components/layouts/main';
-import { Chakra } from 'components/chakra';
+// import { Chakra } from 'components/chakra';
 
 if (typeof window !== 'undefined') {
   window.history.scrollRestoration = 'manual';
@@ -11,7 +18,7 @@ if (typeof window !== 'undefined') {
 
 export default function Website ({ Component, pageProps, router }) {
   return (
-    <Chakra cookies={pageProps.cookies}>
+    <ChakraProvider theme={theme}>
       <Layout router={router}>
         <AnimatePresence
           exitBeforeEnter
@@ -26,6 +33,6 @@ export default function Website ({ Component, pageProps, router }) {
           <Component {...pageProps} key={router.route} />
         </AnimatePresence>
       </Layout>
-    </Chakra>
+    </ChakraProvider>
   );
 }

@@ -8,7 +8,7 @@ export function Author ({ author = [] }) {
     <Box display={{ md: 'flex' }}>
       {author.map((item) => (
         <Box flexGrow={1} textAlign="center" key={item.id}>
-          <Heading as="h2" variant="page-title" size="lg" fontWeight={500}>
+          <Heading as="h3" variant="section-title">
             {item.name}
           </Heading>
           <Text>{item.position}</Text>

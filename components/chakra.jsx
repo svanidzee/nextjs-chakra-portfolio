@@ -1,27 +1,27 @@
-import {
-  ChakraProvider,
-  cookieStorageManager,
-  localStorageManager,
-} from '@chakra-ui/react';
+// import {
+//   ChakraProvider,
+//   cookieStorageManager,
+//   localStorageManager,
+// } from '@chakra-ui/react';
 
-import { theme } from 'lib/theme';
+// import { theme } from 'lib/theme';
 
-export function Chakra ({ cookies, children }) {
-  const colorModeManager = typeof cookies === 'string'
-    ? cookieStorageManager(cookies)
-    : localStorageManager;
+// export function Chakra ({ cookies, children }) {
+//   // const colorModeManager = typeof cookies === 'string'
+//   //   ? cookieStorageManager(cookies)
+//   //   : localStorageManager;
 
-  return (
-    <ChakraProvider theme={theme} colorModeManager={colorModeManager}>
-      {children}
-    </ChakraProvider>
-  );
-}
+//   return (
+//     <ChakraProvider theme={theme} colorModeManager={colorModeManager}>
+//       {children}
+//     </ChakraProvider>
+//   );
+// }
 
-export async function getServerSideProps ({ req }) {
-  return {
-    props: {
-      cookies: req.headers.cookie ?? '',
-    },
-  };
-}
+// export async function getServerSideProps ({ req }) {
+//   return {
+//     props: {
+//       cookies: req.headers.cookie ?? '',
+//     },
+//   };
+// }

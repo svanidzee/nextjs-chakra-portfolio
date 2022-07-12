@@ -11,7 +11,7 @@ export function Stack ({ tools = [] }) {
   return (
     <Box as="section" py="vGutter">
       <Box marginBottom="16">
-        <Heading size="2xl" letterSpacing="tight">
+        <Heading size="2xl" letterSpacing="tight" fontSize="70px" lineHeight="80px" fontWeight={400}>
           Tools &amp; Softwares
         </Heading>
         <Text marginTop="5" fontSize="2xl" maxWidth={{ md: '45rem' }}>

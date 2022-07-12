@@ -9,11 +9,11 @@ export function Layout ({ children, router }) {
     <Box as="main" pb={8}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Homepage</title>
         <meta
           name="description"
           content="Irakli Svanidze's - personal portfolio homepage"
         />
+        <title>Homepage</title>
       </Head>
       <Navbar path={router.asPath} />
       <Container maxW="container.lg" pt={14}>
