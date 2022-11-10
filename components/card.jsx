@@ -14,7 +14,8 @@ import { FaGithub } from "react-icons/fa";
 import Image from "./nextImage";
 
 export default function Card(props) {
-  const { githubUrl, name, stack } = props;
+  const { githubUrl, name, stack, bg } = props;
+  console.log(bg[0]);
 
   const handleClick = (event) => {
     ReactGA.event({
@@ -22,8 +23,6 @@ export default function Card(props) {
       action: event,
     });
   };
-
-  const cardImg = `/images/works/home${useColorModeValue("", "-dark")}.png`;
 
   return (
     <Stack
@@ -48,7 +47,7 @@ export default function Card(props) {
         <Image
           width={1250}
           height={500}
-          src={cardImg}
+          src={useColorModeValue(`${bg[0].url}`, `${bg[1].url}`)}
           transition="0.3s"
           borderRadius="10px 10px 0px 0px"
           alt="project image"
