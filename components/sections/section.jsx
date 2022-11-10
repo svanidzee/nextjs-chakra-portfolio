@@ -1,22 +1,22 @@
-import { useEffect } from 'react'
-import { motion, useAnimation } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { chakra, shouldForwardProp } from '@chakra-ui/react';
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { chakra, shouldForwardProp } from "@chakra-ui/react";
 
 const StyledDiv = chakra(motion.div, {
-  shouldForwardProp: (prop) => shouldForwardProp(prop) || prop === 'transition',
+  shouldForwardProp: (prop) => shouldForwardProp(prop) || prop === "transition",
 });
 
 export function Section({ children, delay = 0 }) {
-  const controls = useAnimation()
-  const [ref, inView] = useInView({ threshold: 0.35 })
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.35 });
 
   useEffect(() => {
     if (inView) {
-      controls.start('visible')
+      controls.start("visible");
     }
-  }, [controls, inView])
-  
+  }, [controls, inView]);
+
   return (
     <StyledDiv
       ref={ref}

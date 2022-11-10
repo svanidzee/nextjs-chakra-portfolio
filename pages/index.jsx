@@ -13,7 +13,7 @@ export default function Home({ home }) {
         toolsContent={home.toolsContent}
         stacks={home.stack}
       />
-      <Hobbies hobbiesTitle={home.hobbiesTitle} hobbies={home.hobbies} />     
+      <Hobbies hobbiesTitle={home.hobbiesTitle} hobbies={home.hobbies} />
     </Layout>
   );
 }

@@ -6,9 +6,7 @@ import { Footer } from 'components/footer/footer';
 
 export function Layout({ children, router }) {
   return (
-    <Box as="main" 
-      pb={8}
-      >
+    <Box as="main" pb={8}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
@@ -23,10 +21,7 @@ export function Layout({ children, router }) {
         <title>Irakli Svanidze - Homepage</title>
       </Head>
       <Navbar path={router.asPath} />
-      <Container 
-        maxW="container.lg" 
-        pt="14"
-        >
+      <Container maxW="container.lg" pt="14">
         {children}
         <Footer />
       </Container>

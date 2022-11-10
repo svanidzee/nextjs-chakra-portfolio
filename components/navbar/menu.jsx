@@ -1,5 +1,5 @@
-import React from 'react';
-import NextLink from 'next/link';
+import React from "react";
+import NextLink from "next/link";
 import {
   Box,
   Menu,
@@ -8,19 +8,19 @@ import {
   MenuButton,
   IconButton,
   useColorModeValue,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 
-import { HamburgerIcon } from '@chakra-ui/icons';
+import { HamburgerIcon } from "@chakra-ui/icons";
 
 const items = [
-  { label: 'Home', href: '/' },
-  { label: 'Works', href: '/works' },
+  { label: "Home", href: "/" },
+  { label: "Works", href: "/works" },
 ];
 
 export function MobileMenu({ handleMenuClick }) {
   return (
     <Box flex={1} align="left">
-      <Box display={{ base: 'inline-block', md: 'none' }}>
+      <Box display={{ base: "inline-block", md: "none" }}>
         <Menu isLazy id="navbar-menu">
           <MenuButton
             as={IconButton}
@@ -33,10 +33,10 @@ export function MobileMenu({ handleMenuClick }) {
             transition="all 0.2s"
             borderRadius="md"
             borderWidth="1px"
-            backgroundColor={useColorModeValue('ghostwhite', '#212121')}
+            backgroundColor={useColorModeValue("ghostwhite", "#212121")}
           >
-            {items.map((item) => (
-              <NextLink href={item.href} passHref prefetch={false}>
+            {items.map((item, i) => (
+              <NextLink key={i} href={item.href} passHref prefetch={false}>
                 <MenuItem as="a">{item.label}</MenuItem>
               </NextLink>
             ))}

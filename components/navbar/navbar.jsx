@@ -1,28 +1,21 @@
-import React, { useCallback } from 'react';
+import React, { useCallback } from "react";
 
-import {
-  Container,
-  Box,
-  Flex
-} from '@chakra-ui/react';
+import { Container, Box, Flex } from "@chakra-ui/react";
 
-import useSound from 'use-sound';
-import menuOpenSound from 'public/sounds/menu-open.mp3';
+import useSound from "use-sound";
+import menuOpenSound from "public/sounds/menu-open.mp3";
 
-import { Tabs } from 'components/navbar/tabs';
-import { MobileMenu } from 'components/navbar/menu';
-import { ThemeToggleButton } from '../theme-toggle-button';
+import { Tabs } from "components/navbar/tabs";
+import { MobileMenu } from "components/navbar/menu";
+import { ThemeToggleButton } from "../theme-toggle-button";
 
 export function Navbar(props) {
   const { path } = props;
   const [play] = useSound(menuOpenSound);
 
-  const handleMenuClick = useCallback(
-    () => {
-      play();
-    },
-    [play],
-  );
+  const handleMenuClick = useCallback(() => {
+    play();
+  }, [play]);
 
   return (
     <Box
@@ -30,25 +23,27 @@ export function Navbar(props) {
       aria-label="Main navigation"
       position="fixed"
       w="100%"
-      css={{ backdropFilter: 'blur(10px)' }}
+      css={{ backdropFilter: "blur(10px)" }}
       zIndex={1}
       {...props}
-
     >
       <Container
         display="flex"
-        // p={['3', '3']}
-        // maxW="container.md"
         justifyContent="flex-end"
-        maxWidth= "100ch"
+        maxWidth="100ch"
         py={2}
       >
         <Flex>
-        <MobileMenu handleMenuClick={handleMenuClick} />
+          <MobileMenu handleMenuClick={handleMenuClick} />
         </Flex>
-        <Flex display="flex" flexDirection="row" alignItems="center" justifyContent="center">
-        <Tabs path={path} />
-        <ThemeToggleButton />
+        <Flex
+          display="flex"
+          flexDirection="row"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Tabs path={path} />
+          <ThemeToggleButton />
         </Flex>
       </Container>
     </Box>

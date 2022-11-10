@@ -1,6 +1,6 @@
-import React from 'react';
-import Head from 'next/head';
-import { motion } from 'framer-motion';
+import React from "react";
+import Head from "next/head";
+import { motion } from "framer-motion";
 
 const variants = {
   hidden: { opacity: 0, x: 0, y: 20 },
@@ -9,7 +9,7 @@ const variants = {
 };
 
 export function Layout({ children, title }) {
-  const t = `${title} - Irakli Svanidze`
+  const t = `${title} - Irakli Svanidze`;
 
   return (
     <motion.article
@@ -17,8 +17,8 @@ export function Layout({ children, title }) {
       animate="enter"
       exit="exit"
       variants={variants}
-      transition={{ duration: 0.1, type: 'easeInOut' }}
-      style={{ position: 'relative' }}
+      transition={{ duration: 0.1, type: "easeInOut" }}
+      style={{ position: "relative" }}
     >
       <React.Fragment>
         {title && (
@@ -29,7 +29,6 @@ export function Layout({ children, title }) {
           </Head>
         )}
         {children}
-
       </React.Fragment>
     </motion.article>
   );

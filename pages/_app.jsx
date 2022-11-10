@@ -1,12 +1,12 @@
-import { AnimatePresence } from 'framer-motion';
-import { ChakraProvider } from '@chakra-ui/react';
+import { AnimatePresence } from "framer-motion";
+import { ChakraProvider } from "@chakra-ui/react";
 
-import { theme } from 'lib/theme';
-import { Layout } from 'components/layouts/main';
-import {Fonts} from 'components/fonts';
+import { theme } from "lib/theme";
+import { Layout } from "components/layouts/main";
+import { Fonts } from "components/fonts";
 
-if (typeof window !== 'undefined') {
-  window.history.scrollRestoration = 'manual';
+if (typeof window !== "undefined") {
+  window.history.scrollRestoration = "manual";
 }
 
 export default function Website({ Component, pageProps, router }) {
@@ -18,7 +18,7 @@ export default function Website({ Component, pageProps, router }) {
           exitBeforeEnter
           initial
           onExitComplete={() => {
-            if (typeof window !== 'undefined') {
+            if (typeof window !== "undefined") {
               window.scrollTo({ top: 0 });
             }
           }}

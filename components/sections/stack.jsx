@@ -6,29 +6,17 @@ import { Paragraph } from 'components/paragraph';
 export function Stack({ toolsTitle, toolsContent, stacks }) {
   return (
     <Section delay={0.1}>
-      <Box as="section" >
+      <Box as="section">
         <Box mb="2">
-          <Heading
-            as="h3"
-            variant="section-title"
-          >
+          <Heading as="h3" variant="section-title">
             {toolsTitle}
           </Heading>
-          <Paragraph>
-            {toolsContent}
-          </Paragraph>
+          <Paragraph>{toolsContent}</Paragraph>
         </Box>
 
-        <Wrap spacing={["3", "4", "4", "4", "4", "4"]}>
-        {/* fontSize={['xl', 'sm', 'sm', 'xl', "xl", "2xl"]}
-        {{ base: 'full', md: 'auto' }} */}
+        <Wrap spacing={['3', '4', '4', '4', '4', '4']}>
           {stacks.map((stack) => (
-            <WrapItem
-              key={stack}
-              fontSize="2xl"
-              // fontWeight="medium"
-              // textAlign="justify"
-            >
+            <WrapItem key={stack} fontSize="2xl">
               {stack}
             </WrapItem>
           ))}
