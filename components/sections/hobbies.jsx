@@ -1,22 +1,19 @@
 import React from 'react';
 import { Heading } from '@chakra-ui/react';
 
-import { Section } from 'components/sections/section';
+import { Section } from 'components/sections';
 import { Paragraph } from 'components/paragraph';
 
-export function Hobbies ({ hobbies = [] }) {
+export function Hobbies({ hobbiesTitle, hobbies }) {
   return (
-    <div>
-      {hobbies.map((item) => (
-        <Section delay={0.3} key={item.id}>
-          <Heading as="h3" variant="section-title" align="left">
-            {item.title}
-          </Heading>
-          <Paragraph>
-            {item.content}
-          </Paragraph>
-        </Section>
-      ))}
-    </div>
+      <Section delay={0.3}>
+        <Heading
+          as="h3"
+          variant="section-title"
+        >
+          {hobbiesTitle}
+        </Heading>
+        <Paragraph>{hobbies}</Paragraph>
+      </Section>
   );
 }

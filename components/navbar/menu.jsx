@@ -11,14 +11,16 @@ import {
 } from '@chakra-ui/react';
 
 import { HamburgerIcon } from '@chakra-ui/icons';
-import { ThemeToggleButton } from '../theme-toggle-button';
 
-export function MobileMenu ({ handleMenuClick }) {
+const items = [
+  { label: 'Home', href: '/' },
+  { label: 'Works', href: '/works' },
+];
+
+export function MobileMenu({ handleMenuClick }) {
   return (
-    <Box flex={1} align="right">
-      <ThemeToggleButton />
-
-      <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+    <Box flex={1} align="left">
+      <Box display={{ base: 'inline-block', md: 'none' }}>
         <Menu isLazy id="navbar-menu">
           <MenuButton
             as={IconButton}
@@ -33,13 +35,11 @@ export function MobileMenu ({ handleMenuClick }) {
             borderWidth="1px"
             backgroundColor={useColorModeValue('ghostwhite', '#212121')}
           >
-            <NextLink href="/" passHref prefetch={false}>
-              <MenuItem as="a">Home</MenuItem>
-            </NextLink>
-            <NextLink href="/works" passHref prefetch={false}>
-              <MenuItem as="a">Works</MenuItem>
-            </NextLink>
-
+            {items.map((item) => (
+              <NextLink href={item.href} passHref prefetch={false}>
+                <MenuItem as="a">{item.label}</MenuItem>
+              </NextLink>
+            ))}
           </MenuList>
         </Menu>
       </Box>

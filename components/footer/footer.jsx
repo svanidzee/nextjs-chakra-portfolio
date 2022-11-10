@@ -1,31 +1,66 @@
-import { Flex, Stack, Text } from '@chakra-ui/react';
-import { IoLogoTwitter, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5';
+import {
+  Link,
+  Stack,
+  Button,
+} from '@chakra-ui/react'
+import ReactGA from 'react-ga';
 
-import { social } from 'data/social';
-import { SocialIcons } from './socials';
+const footerItems = [
+  {
+    id: 1,
+    link: 'https://github.com/svanidzee',
+    title: 'Github',
+  },
+  {
+    id: 2,
+    link: 'https://www.linkedin.com/in/svanidzeee',
+    title: 'Linkedin',
+  },
+  {
+    id: 3,
+    link: 'https://drive.google.com/file/d/1rtwfasSqth4m-BWNKhjRqh_cNeBX3coK/view?usp=share_link',
+    title: 'Resume',
+  },
+];
 
-export function Footer () {
-  const {
-    github,
-    linkidin,
-    twitter,
-  } = social;
+export function Footer() {
+  const handleClick = event => {
+    ReactGA.event({
+      category: 'click',
+      action: event,
+    })
+  }
+
   return (
-    <Flex as="footer" direction="column" alignItems="center" justifyContent="center">
-      <Stack direction="row" spacing={3} mr={{ base: 'auto', md: 2 }}>
-        <SocialIcons label="GitHub" href={github}>
-          <IoLogoGithub />
-        </SocialIcons>
-        <SocialIcons label="Linkidin" href={linkidin}>
-          <IoLogoLinkedin />
-        </SocialIcons>
-        <SocialIcons label="Twitter" href={twitter}>
-          <IoLogoTwitter />
-        </SocialIcons>
+    <Stack justifyContent="flex-start" alignItems="center">
+      <Stack 
+      isInline 
+      gap="5" 
+       mt="10"
+       >
+        {footerItems?.map((item) => (
+          <Link
+            key={item.id}
+            href={item.link}
+            isExternal
+            _hover={{
+              textDecoration: 'none'
+            }}>
+            <Button
+              position="static"
+              color="footer.dim"
+              onClick={() => handleClick('introduction_github')}
+              variant="link"
+              fontSize={["md", 'md', 'lg', 'lg']}
+              textTransform="uppercase"
+              fontWeight="semibold"
+              letterSpacing="wide"
+            >
+              {item.title}
+            </Button>
+          </Link>
+        ))}
       </Stack>
-      <Stack direction="row" spacing={3} mr={{ base: 'auto', md: 2 }}>
-        <Text fontSize="sm">Built with Next.js, GraphCMS, Vercel</Text>
-      </Stack>
-    </Flex>
-  );
+    </Stack>
+  )
 }

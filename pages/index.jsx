@@ -1,48 +1,29 @@
-import {
-  Container,
-} from '@chakra-ui/react';
-
 import { Layout } from 'components/layouts/article';
-import { tools } from 'data/tools';
 
-import { Author } from 'components/sections/author';
-import { About } from 'components/sections/about';
-import { Stack } from 'components/sections/stack';
-import { Hobbies } from 'components/sections/hobbies';
+import { Author, About, Stack, Hobbies } from 'components/sections';
+import { getHomePage } from '../lib/graphcms';
 
-import {
-  getAuthor,
-  getAboutMe,
-  getHobbies,
-} from '../lib/graphcms';
-
-export const getStaticProps = async () => {
-  const author = await getAuthor();
-  const aboutMe = await getAboutMe();
-  const hobbies = await getHobbies();
-
-  return {
-    props: {
-      author,
-      aboutMe,
-      hobbies,
-    },
-  };
-};
-
-export default function Home ({
-  author,
-  aboutMe,
-  hobbies,
-}) {
+export default function Home({ home }) {
   return (
     <Layout>
-      <Container maxW="3xs4">
-        <Author author={author} />
-        <About aboutMe={aboutMe} />
-        <Stack tools={tools} />
-        <Hobbies hobbies={hobbies} />
-      </Container>
+      <Author name={home.myName} position={home.myposition} />
+      <About title={home.aboutTitle} content={home.aboutContent} />
+      <Stack
+        toolsTitle={home.toolsTitle}
+        toolsContent={home.toolsContent}
+        stacks={home.stack}
+      />
+      <Hobbies hobbiesTitle={home.hobbiesTitle} hobbies={home.hobbies} />     
     </Layout>
   );
 }
+
+export const getStaticProps = async () => {
+  const home = await getHomePage();
+
+  return {
+    props: {
+      home,
+    },
+  };
+};

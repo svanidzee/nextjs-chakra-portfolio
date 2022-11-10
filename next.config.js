@@ -20,6 +20,6 @@ module.exports = {
     return config;
   },
   images: {
-    domains: ['media.graphassets.com'],
+    domains: ['media.graphassets.com', 'www.codewars.com'],
   },
 };

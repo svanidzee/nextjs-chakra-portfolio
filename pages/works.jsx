@@ -1,43 +1,53 @@
-import { Container, Heading, SimpleGrid } from '@chakra-ui/react';
+import { Stack, Heading, Text, SimpleGrid, Divider, Flex } from '@chakra-ui/react'
 
+import Card from 'components/card'
 import { Layout } from 'components/layouts/article';
-import { Section } from 'components/sections/section';
-import { WorkGridItem } from 'components/grid-item';
+import { Section } from 'components/sections';
+import { getWorks } from '../lib/graphcms';
 
-import { getAllProjects } from 'lib/graphcms';
-
-export async function getStaticProps () {
-  const projects = (await getAllProjects()) || [];
-  return {
-    props: { projects },
-  };
-}
-
-export default function Works ({ projects }) {
+export default function Works({ work }) {
+  console.log(work)
   return (
     <Layout title="Works">
-      <Container maxW="3xl">
-        <Heading as="h3" fontSize={20} mb={4}>
-          Projects
-        </Heading>
+      <Section delay={0.1}>
+        <Stack
+          spacing="10"
+          justifyContent="center"
+        >
+          <Stack spacing="5">
+            {' '}
+            <Heading
+              color="displayColor"
+              as="h3"
+              variant="section-title"
+            >
+              Projects
+            </Heading>
 
-        <SimpleGrid columns={[1, 1, 1]} gap={6}>
-          {projects.map((item) => (
-            <Section delay={0.1} key={item.id}>
-
-              <WorkGridItem
-                thumbnail={item.projectImage.url}
-                title={item.title}
-                red={item.sourceURL}
-              >
-                {item.description}
-              </WorkGridItem>
-
-            </Section>
-          ))}
-
-        </SimpleGrid>
-      </Container>
+            <Text fontSize={{ base: 'sm', md: 'md' }}>
+              I love building projects and practice my engineering skills,
+              here's an archive of things that I've worked on.
+            </Text>
+            <Divider />
+          </Stack>
+          <SimpleGrid 
+            columns={{ sm: 1, md: 1 }} 
+            spacing="8"
+            >
+            <Card {...work} />
+          </SimpleGrid>
+        </Stack>
+      </Section>
     </Layout>
-  );
+  )
 }
+
+export const getStaticProps = async () => {
+  const work = await getWorks();
+
+  return {
+    props: {
+      work: work[0],
+    },
+  };
+};

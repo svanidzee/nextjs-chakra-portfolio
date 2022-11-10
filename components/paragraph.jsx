@@ -1,5 +1,18 @@
-import styled from '@emotion/styled';
+import { chakra } from "@chakra-ui/react"
 
-export const Paragraph = styled.p`
-  text-align: justify;
-`;
+export function Paragraph({ children }) {
+  return (
+    <chakra.p
+      textAlign="justify"
+      fontSize={['lg', "lg", 'xl', 'xl', "xl", "2xl"]}
+      lineHeight="9"
+      // fontWeight="thin"
+      letterSpacing="tighter"
+      fontWeight={["light", "light", "normal", "normal", "normal", "normal"]}
+    >
+      {children}
+    </chakra.p>
+  );
+}
+
+

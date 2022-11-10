@@ -1,31 +1,30 @@
 import React, { useCallback } from 'react';
 import { IconButton, useColorMode, useColorModeValue } from '@chakra-ui/react';
-import { IoPlanetOutline, IoPlanetSharp } from 'react-icons/io5';
+import { CgSun, CgMoon } from 'react-icons/cg';
 
 import useSound from 'use-sound';
 import switchOnSound from 'public/sounds/switch-on.mp3';
 import switchOffSound from 'public/sounds/switch-off.mp3';
 
-export function ThemeToggleButton () {
+export function ThemeToggleButton() {
   const { toggleColorMode } = useColorMode();
 
   const isDarkMode = toggleColorMode === 'dark';
   const [play] = useSound(isDarkMode ? switchOnSound : switchOffSound);
 
-  const handleClick = useCallback(
-    () => {
-      toggleColorMode();
-      play();
-    },
-    [play, toggleColorMode],
-  );
+  const handleClick = useCallback(() => {
+    toggleColorMode();
+    play();
+  }, [play, toggleColorMode]);
 
   return (
     <IconButton
-      aria-label="Toggle theme"
+    alignSelf="left"
+      variant="ghost"
       size="md"
-      icon={useColorModeValue(<IoPlanetSharp />, <IoPlanetOutline />)}
-      mr={5}
+      icon={useColorModeValue(<CgMoon />, <CgSun />)}
+      // mr={7}
+      position="relative"
       onClick={handleClick}
       _focus={{
         border: 'none',

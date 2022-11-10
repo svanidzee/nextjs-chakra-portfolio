@@ -1,33 +1,39 @@
 import React from 'react';
-import {
-  Box,
-  Heading,
-  Text,
-  Wrap,
-  WrapItem,
-} from '@chakra-ui/react';
+import { Box, Heading, Wrap, WrapItem } from '@chakra-ui/react';
+import { Section } from 'components/sections';
+import { Paragraph } from 'components/paragraph';
 
-export function Stack ({ tools = [] }) {
+export function Stack({ toolsTitle, toolsContent, stacks }) {
   return (
-    <Box as="section" py="vGutter">
-      <Box marginBottom="16">
-        <Heading size="2xl" letterSpacing="tight" fontSize="70px" lineHeight="80px" fontWeight={400}>
-          Tools &amp; Softwares
-        </Heading>
-        <Text marginTop="5" fontSize="2xl" maxWidth={{ md: '45rem' }}>
-          Over the years, I had the opportunity to work with various software, tools and
-          frameworks. Here are some of them:
-        </Text>
+    <Section delay={0.1}>
+      <Box as="section" >
+        <Box mb="2">
+          <Heading
+            as="h3"
+            variant="section-title"
+          >
+            {toolsTitle}
+          </Heading>
+          <Paragraph>
+            {toolsContent}
+          </Paragraph>
+        </Box>
+
+        <Wrap spacing={["3", "4", "4", "4", "4", "4"]}>
+        {/* fontSize={['xl', 'sm', 'sm', 'xl', "xl", "2xl"]}
+        {{ base: 'full', md: 'auto' }} */}
+          {stacks.map((stack) => (
+            <WrapItem
+              key={stack}
+              fontSize="2xl"
+              // fontWeight="medium"
+              // textAlign="justify"
+            >
+              {stack}
+            </WrapItem>
+          ))}
+        </Wrap>
       </Box>
-
-      <Wrap spacing="6">
-        {tools.map((tool) => (
-          <WrapItem fontSize="larger" color="sage.base" key={tool}>
-            {tool}
-          </WrapItem>
-        ))}
-      </Wrap>
-    </Box>
-
+    </Section>
   );
 }

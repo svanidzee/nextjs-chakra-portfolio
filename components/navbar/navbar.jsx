@@ -3,6 +3,7 @@ import React, { useCallback } from 'react';
 import {
   Container,
   Box,
+  Flex
 } from '@chakra-ui/react';
 
 import useSound from 'use-sound';
@@ -10,9 +11,9 @@ import menuOpenSound from 'public/sounds/menu-open.mp3';
 
 import { Tabs } from 'components/navbar/tabs';
 import { MobileMenu } from 'components/navbar/menu';
-// import { ThemeToggleButton } from 'components/theme-toggle-button';
+import { ThemeToggleButton } from '../theme-toggle-button';
 
-export function Navbar (props) {
+export function Navbar(props) {
   const { path } = props;
   const [play] = useSound(menuOpenSound);
 
@@ -32,19 +33,23 @@ export function Navbar (props) {
       css={{ backdropFilter: 'blur(10px)' }}
       zIndex={1}
       {...props}
+
     >
       <Container
         display="flex"
-        p={2}
-        maxW="container.md"
-        wrap="wrap"
-        align="center"
-        justifyContent="flex-start"
+        // p={['3', '3']}
+        // maxW="container.md"
+        justifyContent="flex-end"
+        maxWidth= "100ch"
+        py={2}
       >
-        <Tabs path={path} />
-        {/* <ThemeToggleButton display={{ base: 'none', md: 'flex' }}/> */}
-
+        <Flex>
         <MobileMenu handleMenuClick={handleMenuClick} />
+        </Flex>
+        <Flex display="flex" flexDirection="row" alignItems="center" justifyContent="center">
+        <Tabs path={path} />
+        <ThemeToggleButton />
+        </Flex>
       </Container>
     </Box>
   );
