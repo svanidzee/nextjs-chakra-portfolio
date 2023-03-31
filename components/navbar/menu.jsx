@@ -1,4 +1,3 @@
-import React from "react";
 import NextLink from "next/link";
 import {
   Box,
@@ -9,7 +8,6 @@ import {
   IconButton,
   useColorModeValue,
 } from "@chakra-ui/react";
-
 import { HamburgerIcon } from "@chakra-ui/icons";
 
 const items = [

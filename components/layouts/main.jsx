@@ -1,10 +1,10 @@
-import Head from 'next/head';
-import { Box, Container } from '@chakra-ui/react';
+import Head from "next/head";
+import { Box, Container } from "@chakra-ui/react";
 
-import { Navbar } from 'components/navbar/navbar';
-import { Footer } from 'components/footer/footer';
+import { Navbar } from "components/navbar";
+import { Footer } from "components/footer";
 
-export function Layout({ children, router }) {
+export function Main({ children, router }) {
   return (
     <Box as="main" pb={8}>
       <Head>

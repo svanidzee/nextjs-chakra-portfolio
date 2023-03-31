@@ -1,14 +1,13 @@
 import { Stack, Heading, Text, SimpleGrid, Divider } from "@chakra-ui/react";
 
-import Card from "components/card";
-import { Layout } from "components/layouts/article";
+import { Card } from "components/card";
+import { Page } from "components/layouts";
 import { Section } from "components/sections";
-import { getWorks } from "../lib/graphcms";
+import { getWorks } from "lib/graphcms";
 
 export default function Works({ work }) {
-  console.log(work);
   return (
-    <Layout title="Works">
+    <Page title="Works">
       <Section delay={0.1}>
         <Stack spacing="10" justifyContent="center">
           <Stack spacing="5">
@@ -27,13 +26,12 @@ export default function Works({ work }) {
           </SimpleGrid>
         </Stack>
       </Section>
-    </Layout>
+    </Page>
   );
 }
 
 export const getStaticProps = async () => {
   const work = await getWorks();
-
   return {
     props: {
       work: work[0],

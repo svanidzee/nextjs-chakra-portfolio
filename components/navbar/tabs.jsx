@@ -1,7 +1,6 @@
-import React from "react";
 import { Stack } from "@chakra-ui/react";
 
-import { LinkItem } from "./link-item";
+import { LinkItem } from "components/base/link.item";
 
 const items = [
   { label: "Home", href: "/" },

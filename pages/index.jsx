@@ -1,11 +1,10 @@
-import { Layout } from 'components/layouts/article';
-
-import { Author, About, Stack, Hobbies } from 'components/sections';
-import { getHomePage } from '../lib/graphcms';
+import { Page } from "components/layouts";
+import { Author, About, Stack, Hobbies } from "components/sections";
+import { getHomePage } from "lib/graphcms";
 
 export default function Home({ home }) {
   return (
-    <Layout>
+    <Page>
       <Author name={home.myName} position={home.myposition} />
       <About title={home.aboutTitle} content={home.aboutContent} />
       <Stack
@@ -14,16 +13,15 @@ export default function Home({ home }) {
         stacks={home.stack}
       />
       <Hobbies hobbiesTitle={home.hobbiesTitle} hobbies={home.hobbies} />
-    </Layout>
+    </Page>
   );
 }
 
 export const getStaticProps = async () => {
   const home = await getHomePage();
-
   return {
     props: {
-      home,
+      home: home,
     },
   };
 };

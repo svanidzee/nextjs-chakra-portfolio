@@ -11,11 +11,12 @@ import {
 import ReactGA from "react-ga";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
-import Image from "./nextImage";
 
-export default function Card(props) {
+import { Image } from "components/image";
+
+export function Card(props) {
+  console.log(props);
   const { githubUrl, name, stack, bg } = props;
-  console.log(bg[0]);
 
   const handleClick = (event) => {
     ReactGA.event({
@@ -73,16 +74,13 @@ export default function Card(props) {
           <Divider />
           <Wrap spacing={1} marginBottom="auto">
             <WrapItem gap={2}>
-              {stack.map((s) => (
-                <Badge
-                  key={s.id}
-                  colorScheme={useColorModeValue("blackAlpha", "green")}
-                  textTransform="none"
-                  fontSize={12}
-                >
-                  {s}
-                </Badge>
-              ))}
+              <Badge
+                colorScheme={useColorModeValue("blackAlpha", "green")}
+                textTransform="none"
+                fontSize={12}
+              >
+                {stack[0]}
+              </Badge>
             </WrapItem>
           </Wrap>
         </Stack>

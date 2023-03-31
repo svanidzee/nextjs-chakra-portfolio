@@ -19,6 +19,7 @@ export function ThemeToggleButton() {
 
   return (
     <IconButton
+      aria-label="Toggle"
       alignSelf="left"
       variant="ghost"
       size="md"

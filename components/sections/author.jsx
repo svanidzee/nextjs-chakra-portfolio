@@ -1,17 +1,16 @@
-import React from "react";
 import { Heading, Box } from "@chakra-ui/react";
 
-import { Section } from "components/sections";
+import { Section } from ".";
 
 export function Author({ name, position }) {
   return (
     <Section delay={0.1}>
       <Box display={{ md: "flex" }}>
         <Box flexGrow={1} textAlign="center">
-          <Heading as="h3" variant="section-title">
+          <Heading as="h1" variant="section-title">
             {name}
           </Heading>
-          <Heading as="h6" variant="sub-text">
+          <Heading as="h2" variant="sub-text">
             {position}
           </Heading>
         </Box>

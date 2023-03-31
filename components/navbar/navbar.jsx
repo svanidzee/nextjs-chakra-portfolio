@@ -1,13 +1,12 @@
 import React, { useCallback } from "react";
-
 import { Container, Box, Flex } from "@chakra-ui/react";
+
+// import { Tabs } from "./";
+import { MobileMenu, Tabs } from ".";
+import { ThemeToggleButton } from "components/toggle";
 
 import useSound from "use-sound";
 import menuOpenSound from "public/sounds/menu-open.mp3";
-
-import { Tabs } from "components/navbar/tabs";
-import { MobileMenu } from "components/navbar/menu";
-import { ThemeToggleButton } from "../theme-toggle-button";
 
 export function Navbar(props) {
   const { path } = props;
@@ -35,6 +34,7 @@ export function Navbar(props) {
       >
         <Flex>
           <MobileMenu handleMenuClick={handleMenuClick} />
+          {/* <MobileMenu /> */}
         </Flex>
         <Flex
           display="flex"

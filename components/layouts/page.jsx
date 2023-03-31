@@ -8,7 +8,7 @@ const variants = {
   exit: { opacity: 0, x: -0, y: 20 },
 };
 
-export function Layout({ children, title }) {
+export function Page({ children, title }) {
   const t = `${title} - Irakli Svanidze`;
 
   return (
