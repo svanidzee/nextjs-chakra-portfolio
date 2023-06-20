@@ -39,7 +39,8 @@ export async function getWorks() {
     const { data } = await client.query({
       query: gql`
         query MyQuery {
-          work(where: { slug: "portfolio" }) {
+          work {
+            id
             slug
             stack
             name

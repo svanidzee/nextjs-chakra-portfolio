@@ -1,6 +1,6 @@
-import { Page } from "components/layouts";
-import { Author, About, Stack, Hobbies } from "components/sections";
-import { getHomePage } from "lib/graphcms";
+import { Page } from "../components/layouts";
+import { Author, About, Stack, Hobbies } from "../components/sections";
+import { getHomePage } from "../graphql/graphcms";
 
 export default function Home({ home }) {
   return (
@@ -21,7 +21,7 @@ export const getStaticProps = async () => {
   const home = await getHomePage();
   return {
     props: {
-      home: home,
+      home,
     },
   };
 };

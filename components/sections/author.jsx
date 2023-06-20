@@ -1,6 +1,6 @@
 import { Heading, Box } from "@chakra-ui/react";
 
-import { Section } from ".";
+import { Section } from "./section";
 
 export function Author({ name, position }) {
   return (

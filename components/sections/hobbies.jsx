@@ -1,7 +1,7 @@
 import { Heading } from "@chakra-ui/react";
 
-import { Section } from ".";
-import { Paragraph } from "components/base/paragraph";
+import { Paragraph } from "../base/paragraph";
+import { Section } from "./section";
 
 export function Hobbies({ hobbiesTitle, hobbies }) {
   return (

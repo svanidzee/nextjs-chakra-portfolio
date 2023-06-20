@@ -1,15 +1,13 @@
 import { Stack } from "@chakra-ui/react";
 
-import { LinkItem } from "components/base/link.item";
+import { LinkItem } from "../base/link.item";
 
 const items = [
   { label: "Home", href: "/" },
   { label: "Works", href: "/works" },
 ];
 
-export function Tabs({ path }) {
-  const ariaCurrent = items.href === path ? "page" : undefined;
-
+export function Tabs() {
   return (
     <Stack
       as="nav"
@@ -21,9 +19,8 @@ export function Tabs({ path }) {
       {items.map((item) => (
         <LinkItem
           key={item.label}
-          aria-current={ariaCurrent}
-          _focus={{ boxShadow: "none" }}
           href={item.href}
+          _focus={{ boxShadow: "none" }}
         >
           {item.label}
         </LinkItem>

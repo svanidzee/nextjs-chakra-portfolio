@@ -1,27 +1,21 @@
-import { Box, Heading, Wrap, WrapItem } from "@chakra-ui/react";
+import { Heading, Wrap, WrapItem } from "@chakra-ui/react";
 
-import { Section } from ".";
-import { Paragraph } from "components/base/paragraph";
+import { Section } from "./section";
 
-export function Stack({ toolsTitle, toolsContent, stacks }) {
+export function Stack({ toolsTitle, stacks }) {
   return (
     <Section delay={0.1}>
-      <Box as="section">
-        <Box mb="2">
-          <Heading as="h1" variant="section-title">
-            {toolsTitle}
-          </Heading>
-          <Paragraph>{toolsContent}</Paragraph>
-        </Box>
+      <Heading as="h1" variant="section-title">
+        {toolsTitle}
+      </Heading>
 
-        <Wrap spacing={["3", "4", "4", "4", "4", "4"]}>
-          {stacks.map((stack) => (
-            <WrapItem key={stack} fontSize="2xl">
-              {stack}
-            </WrapItem>
-          ))}
-        </Wrap>
-      </Box>
+      <Wrap mt="10px">
+        {stacks.map((stack) => (
+          <WrapItem key={stack} fontSize="23px" fontWeight="500">
+            {stack}
+          </WrapItem>
+        ))}
+      </Wrap>
     </Section>
   );
 }

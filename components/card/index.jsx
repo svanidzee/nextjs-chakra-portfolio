@@ -1,90 +1,78 @@
 import {
-  Text,
-  Stack,
-  Divider,
-  Link,
-  Wrap,
-  WrapItem,
   Badge,
+  Box,
+  Heading,
+  HStack,
+  LinkBox,
+  LinkOverlay,
+  Stack,
+  Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import ReactGA from "react-ga";
-import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 
-import { Image } from "components/image";
-
-export function Card(props) {
-  console.log(props);
-  const { githubUrl, name, stack, bg } = props;
-
-  const handleClick = (event) => {
-    ReactGA.event({
-      category: "click",
-      action: event,
-    });
-  };
-
+export function Card({ data }) {
   return (
-    <Stack
-      as={motion.div}
-      bg="secondary"
-      borderRadius="10px"
+    <LinkBox
+      position="relative"
+      display="flex"
+      data-group
+      gap="2rem"
       border="1px"
-      borderColor={{ base: "#333", md: "borderColor" }}
-      whileHover={{
-        scale: 1.02,
-      }}
-      whileTap={{ scale: 0.9 }}
-      transition={{ ease: "ease-in-out", duration: 1.5 }}
+      borderColor="gray.500"
+      borderRadius="10px"
+      padding={10}
+      flexDirection={{ base: "column", md: "row" }}
+      alignItems="flex-start"
+      transition="background 0.1s ease-in-out"
     >
-      <Link
-        href={githubUrl}
-        isExternal
-        _hover={{
-          textDecoration: "none",
-        }}
-      >
-        <Image
-          width={1250}
-          height={500}
-          src={useColorModeValue(`${bg[0].url}`, `${bg[1].url}`)}
-          transition="0.3s"
-          borderRadius="10px 10px 0px 0px"
-          alt="project image"
-        />
-        <Stack px={4} py={2}>
-          <Stack isInline justifyContent="space-between" alignItems="center">
-            <Text
-              fontSize={[15, 15, 23, 23, 23, 23]}
-              fontWeight={600}
-              color="displayColor"
-            >
-              {name}
-            </Text>
-            <Link
-              href="/"
-              color="white"
-              onClick={() => handleClick("githublink")}
-              isExternal
-            >
-              <FaGithub aria-label="github" size="20" />
-            </Link>
-          </Stack>
-          <Divider />
-          <Wrap spacing={1} marginBottom="auto">
-            <WrapItem gap={2}>
-              <Badge
-                colorScheme={useColorModeValue("blackAlpha", "green")}
-                textTransform="none"
-                fontSize={12}
-              >
-                {stack[0]}
-              </Badge>
-            </WrapItem>
-          </Wrap>
-        </Stack>
-      </Link>
-    </Stack>
+      <Box>
+        <Box
+          position="relative"
+          rounded="lg"
+          overflow="hidden"
+          width="18.75rem"
+          height="10.5rem"
+        >
+          <Image
+            src={useColorModeValue(`${data.bg[1].url}`, `${data.bg[0].url}`)}
+            // src={bg[0].url}
+            // transition="0.3s"
+            // borderRadius="10px 10px 0px 0px"
+            alt="project image"
+            // alt="dsdfsdf"
+            // src={data.bg}
+            layout="fill"
+            style={{ objectFit: "cover" }}
+            priority
+          />
+        </Box>
+      </Box>
+
+      <Stack spacing="4" marginTop="2" zIndex="1">
+        <Heading as="h6" fontSize="15px">
+          <LinkOverlay as={Link} href="" isExternal>
+            {data.name}
+          </LinkOverlay>
+        </Heading>
+
+        <Text fontSize="20px" maxWidth={{ md: "33.5rem" }}>
+          {data.description}
+        </Text>
+
+        <HStack spacing="2">
+          {data.stack.map((s, i) => (
+            <Badge key={i} variant="solid" colorScheme="purple">
+              {s}
+            </Badge>
+          ))}
+          <LinkOverlay as={Link} href={data.githubUrl} isExternal>
+            <FaGithub aria-label="github" size="20" />
+          </LinkOverlay>
+        </HStack>
+      </Stack>
+    </LinkBox>
   );
 }

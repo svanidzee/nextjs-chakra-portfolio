@@ -1,4 +1,4 @@
-import { Link, Stack, Button } from "@chakra-ui/react";
+import { Link, Stack, Button, Divider } from "@chakra-ui/react";
 import ReactGA from "react-ga";
 
 import { data } from "./footer.data";
@@ -12,7 +12,8 @@ export function Footer() {
   };
 
   return (
-    <Stack justifyContent="flex-start" alignItems="center">
+    <Stack justifyContent="flex-start" alignItems="center" mt="10">
+      <Divider orientation="horizontal" size="xl" />
       <Stack isInline gap="5" mt="10">
         {data.map((item) => (
           <Link
@@ -24,10 +25,10 @@ export function Footer() {
             }}
           >
             <Button
-              position="static"
-              color="footer.dim"
               onClick={() => handleClick("introduction_github")}
               variant="link"
+              position="static"
+              color="footer.dim"
               fontSize={["md", "md", "lg", "lg"]}
               textTransform="uppercase"
               fontWeight="semibold"
