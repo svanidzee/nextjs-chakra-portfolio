@@ -6,6 +6,7 @@ import { Section } from "../components/sections";
 import { getWorks } from "../graphql/graphcms";
 
 export default function Works({ works }) {
+  console.log(works)
   return (
     <Page title="Works">
       <Section delay={0.1}>
